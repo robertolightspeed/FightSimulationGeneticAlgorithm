@@ -26,6 +26,8 @@ class BattleLog implements BattleLogInterface
     {
         $this->hero    = $hero->toArray();
         $this->monster = $monster->toArray();
+        $this->rounds  = [];
+        $this->winner  = 'No Winner';
     }
 
     /**

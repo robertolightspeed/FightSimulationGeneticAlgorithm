@@ -47,7 +47,6 @@ class War implements WarInterface
 
     private function generationWar(array $heroes, $generation = 1)
     {
-        $this->cyclopes->resetHealth();
         if ($generation > self::MAX_GENERATIONS)
         {
             return true;
@@ -56,11 +55,12 @@ class War implements WarInterface
 
         foreach ($heroes as $hero)
         {
+            $this->cyclopes->resetHealth();
             $this->battleService->fight($hero, $this->cyclopes);
             $result = $this->battleService->getLogs();
             $fights[] = $result;
 
-            if ($result['winner'] !== "Cyclops")
+            if ($result['winner'] == $hero->getName())
             {
                 $this->genarations[$generation] = [
                     'Generation'       => $generation,
