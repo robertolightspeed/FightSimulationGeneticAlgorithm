@@ -19,7 +19,7 @@ class HeroChild extends Fighter
 
     public function __construct(Fighter $hero1, Fighter $hero2)
     {
-        $this->name     = hero_name() . ' ' . last_word($hero1->getName()) . ' ' . last_word($hero2->getName());
+        $this->name = hero_name() . ' ' . $this->getFamilyName($hero1->getName(), $hero2->getName());
        foreach (static::ATTR_RANGE as $skill => $range)
        {
 
@@ -28,6 +28,19 @@ class HeroChild extends Fighter
        }
         $this->defenseAbilities[] = new Dodge($this->getLuck());
         $this->initialHealth = $this->health;
+    }
+
+    private function getFamilyName($name1, $name2)
+    {
+        $last_name1 = last_word($name1);
+        $last_name2 = last_word($name2);
+
+        if ($last_name1 === $last_name2)
+        {
+            $last_name2 = last_word(trim(str_replace($last_name2,'', $name2)));
+        }
+
+        return $last_name1 . ' ' . $last_name2;
     }
 
     public function applyMutation()
