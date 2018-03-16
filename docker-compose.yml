@@ -1,0 +1,31 @@
+version: '2.1'
+services:
+  nginx:
+    build: .docker/nginx
+    ports:
+      - "8088:80"
+    links:
+      - php
+    volumes:
+      - .:/var/www/html
+
+  php:
+    build: .docker/php
+    environment:
+      HERO: ${HERO}
+    links:
+      - db
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    volumes:
+      - .:/var/www/html
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: '123'
+      MYSQL_DATABASE: development
+    ports:
+      - '33066:3306'
+    volumes:
+      - ./.docker/mysql/init:/docker-entrypoint-initdb.d
