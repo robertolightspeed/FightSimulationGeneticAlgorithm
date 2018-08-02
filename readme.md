@@ -4,6 +4,8 @@ This mini project was build to show to other PHP/or not devs, a simple usage for
 
 ...yes I'm using Lumen framework
 
+A really good article (not so complex) about GA is: http://www.abrandao.com/2015/01/simple-php-genetic-algorithm/ Ready only the GA concept the Code part of the article is too messy ;)
+
 ## REQUIRED
 `Docker`
 `Docker Compose`
