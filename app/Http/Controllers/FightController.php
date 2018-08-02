@@ -7,6 +7,7 @@ use App\Model\Fighters\Hero;
 use App\Model\Fighters\Monster;
 use App\Service\Contract\BattleInterface;
 use App\Service\Contract\WarInterface;
+use Illuminate\Http\Request;
 
 /**
  * Class FightController
@@ -34,8 +35,13 @@ class FightController extends Controller
         return response()->json($this->battleService->getLogs());
     }
 
-    public function warAction()
+    public function warAction(Request $request)
     {
-        return response()->json($this->warService->startWar());
+        if (!is_null($request->get('json')))
+        {
+            return response()->json($this->warService->startWar());
+        }
+
+        return view('war', ['data' => $this->warService->startWar()]);
     }
 }
