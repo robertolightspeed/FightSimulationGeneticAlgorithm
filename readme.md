@@ -4,7 +4,8 @@ This mini project was build to show to other PHP/or not devs, a simple usage for
 
 ...yes I'm using Lumen framework
 
-A really good article (not so complex) about GA is: http://www.abrandao.com/2015/01/simple-php-genetic-algorithm/ Ready only the GA concept the Code part of the article is too messy ;)
+A really good article (not so complex) about GA is: http://www.abrandao.com/2015/01/simple-php-genetic-algorithm/ 
+Read only the GA concept, the Code part of the article is too messy ;)
 
 ## REQUIRED
 `Docker`
@@ -24,7 +25,7 @@ Single fight - format JSON:
 
 # Let's Fight
 
-This library will simulate a War between several generations of fights against a mighty Cyclops. Be careful! :D
+This library will simulate a War between several generations of fighters against a mighty Cyclops. Be careful! :D
 
 The WAR concept is that the first generation of 4 fighters and the two bests will generate 4 children that will also fight the giant. The best fighters are the ones that last more turns against the Cyclops.
 
@@ -70,6 +71,5 @@ The cycle of generations will go on until one this fighters kill the Cyclops. Or
 
 *Every time you run the war the results will be different ;) *
 
-A really good article (not so complex) about GA is:
-http://www.abrandao.com/2015/01/simple-php-genetic-algorithm/
-Ready only the GA concept the Code part of the article is too messy ;)
+A really good article (not so complex) about GA is: http://www.abrandao.com/2015/01/simple-php-genetic-algorithm/ 
+Read only the GA concept, the Code part of the article is too messy ;)
